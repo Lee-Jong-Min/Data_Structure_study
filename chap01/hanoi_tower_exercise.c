@@ -7,11 +7,11 @@
 void hanoi_tower(int n, char from, char tmp, char to)
 {
 	if(n == 1)
-		printf("¿øÆÇ 1À» %c¿¡¼­ %cÀ¸·Î ¿Å±ä´Ù.\n",from,to);
+		printf("ì›íŒ 1ì„ %cì—ì„œ %cìœ¼ë¡œ ì˜®ê¸´ë‹¤.\n",from,to);
 	else
 	{
 		hanoi_tower(n-1,from,to,tmp);
-		printf("¿øÆÇ %dÀ» %c¿¡¼­ %cÀ¸·Î «±ä´Ù.\n",n,from,to);
+		printf("ì›íŒ %dì„ %cì—ì„œ %cìœ¼ë¡œ Âã‚±èŠ½.\n",n,from,to);
 		hanoi_tower(n-1,tmp,from,to);
 	}
 }
@@ -25,6 +25,6 @@ void main()
 	hanoi_tower(15,'A','B','C');
 	finish = clock();
 	duration = (double)(finish - start);
-	printf("%lf Å¬·°ÀÔ´Ï´Ù.",duration);
+	printf("%lf í´ëŸ­ì…ë‹ˆë‹¤.",duration);
 
 }
