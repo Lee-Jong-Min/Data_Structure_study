@@ -45,7 +45,7 @@ int main()
 		addq(front, &rear, data[i]);
 	}
 
-	printf("queue¿¡ µé¾îÀÖ´Â key¿Í string\n\n");
+	printf("queueì— ë“¤ì–´ìˆëŠ” keyì™€ string\n\n");
 	printf("key      string\n");
 	
 	for (i = 1; i < 6; i++)
@@ -54,7 +54,7 @@ int main()
 	}
 	
 	printf("\n");
-	printf("queue¿¡¼­ ²¨³½ 2°³ÀÇ dataÀÇ key¿Í string\n\n");
+	printf("queueì—ì„œ êº¼ë‚¸ 2ê°œì˜ dataì˜ keyì™€ string\n\n");
 	printf("key     string\n");
 	
 	for (i = 0; i < 2; i++)
