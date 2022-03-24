@@ -13,5 +13,5 @@ void main()
 	for (i=0;i<=n;i++)
 		sum = sum + i;
 
-	printf("1ºÎÅÍ %d±îÁö ÇÕ : %d",n,sum);
+	printf("1ÂºÃŽÃ…Ã %dÂ±Ã®ÃÃ¶ Ã‡Ã• : %d",n,sum);
 }
