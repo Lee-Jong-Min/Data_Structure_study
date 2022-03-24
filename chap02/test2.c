@@ -2,5 +2,5 @@
 
 void main()
 {
-	printf("finally success....");
+	printf("please success");
 }
