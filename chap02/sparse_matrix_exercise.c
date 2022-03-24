@@ -68,30 +68,30 @@ void fast_trans(term a[], term b[])
 
 void main()
 {
-	FILE* fp, * ofp; // ÆÄÀÏ ÀÔÃâ·ÂÀ» À§ÇÑ ¼±¾ğºÎ ºĞ 
-	fp = fopen("TRANS¾Ë°í¸®Áò_original matrix.csv", "r");
-	ofp = fopen("TRANS¾Ë°í¸®Áò_trans matrix.txt", "w");
+	FILE* fp, * ofp; // íŒŒì¼ ì…ì¶œë ¥ì„ ìœ„í•œ ì„ ì–¸ë¶€ ë¶„ 
+	fp = fopen("TRANSì•Œê³ ë¦¬ì¦˜_original matrix.csv", "r");
+	ofp = fopen("TRANSì•Œê³ ë¦¬ì¦˜_trans matrix.txt", "w");
 
-	term a[MAX_TERMS], b[MAX_TERMS]; // ÀüÄ¡Çà·ÄÀ» ¸¸µé±â À§ÇÑ original matrix ¼±¾ğºÎºĞ 
+	term a[MAX_TERMS], b[MAX_TERMS]; // ì „ì¹˜í–‰ë ¬ì„ ë§Œë“¤ê¸° ìœ„í•œ original matrix ì„ ì–¸ë¶€ë¶„ 
 	a[0].col = 500;
 	a[0].row = 500;
 	a[0].value = 500;
 
-	clock_t start1, finish1, start2, finish2; // ¾Ë°í¸®Áò ½ÇÇà½Ã°£ ÃøÁ¤À» À§ÇÑ ¼±¾ğºÎºĞ 
+	clock_t start1, finish1, start2, finish2; // ì•Œê³ ë¦¬ì¦˜ ì‹¤í–‰ì‹œê°„ ì¸¡ì •ì„ ìœ„í•œ ì„ ì–¸ë¶€ë¶„ 
 	double duration_simple, duration_fast;
 
-	int i; // ¹İº¹¹® Á¦¾î¸¦ À§ÇÑ ¼±¾ğºÎºĞ 
+	int i; // ë°˜ë³µë¬¸ ì œì–´ë¥¼ ìœ„í•œ ì„ ì–¸ë¶€ë¶„ 
 
 	for (i = 1; i <= 500; i++)
 	{
 		fscanf(fp, "%d,%d,%d", &a[i].row, &a[i].col, &a[i].value);
 	}
-	for (i = 0; i < MAX_TERMS; i++) // original matrix a Ãâ·Â±¸¹® 
+	for (i = 0; i < MAX_TERMS; i++) // original matrix a ì¶œë ¥êµ¬ë¬¸ 
 	{
 		printf("%d  %d  %d\n", a[i].row, a[i].col, a[i].value);
 	}
 
-	start1 = clock(); // simple_transpose ¾Ë°í¸®Áò ½Ã°£ÃøÁ¤ 
+	start1 = clock(); // simple_transpose ì•Œê³ ë¦¬ì¦˜ ì‹œê°„ì¸¡ì • 
 
 	for (i = 1; i <= 1000; i++)
 	{
@@ -101,7 +101,7 @@ void main()
 	finish1 = clock();
 	duration_simple = (double)(finish1 - start1);
 
-	start2 = clock(); // fast_trans ¾Ë°í¸®Áò ½Ã°£ÃøÁ¤
+	start2 = clock(); // fast_trans ì•Œê³ ë¦¬ì¦˜ ì‹œê°„ì¸¡ì •
 
 	for (i = 1; i <= 1000; i++)
 	{
@@ -118,15 +118,15 @@ void main()
 
 	printf("\n");
 
-	for (i = 0; i < MAX_TERMS; i++) // transpose matrix b Ãâ·Â±¸¹® 
+	for (i = 0; i < MAX_TERMS; i++) // transpose matrix b ì¶œë ¥êµ¬ë¬¸ 
 	{
 		printf("%d  %d  %d\n", b[i].row, b[i].col, b[i].value);
 	}
 
 	printf("\n");
 
-	printf("SIMPLE_TRANS ¾Ë°í¸®ÁòÀÇ Å¬·°¼ö´Â %.0fÀÔ´Ï´Ù.\n\n", duration_simple);
-	printf("FAST_TRANS ¾Ë°í¸®ÁòÀÇ Å¬·°¼ö´Â %.0fÀÔ´Ï´Ù.\n", duration_fast);
+	printf("SIMPLE_TRANS ì•Œê³ ë¦¬ì¦˜ì˜ í´ëŸ­ìˆ˜ëŠ” %.0fì…ë‹ˆë‹¤.\n\n", duration_simple);
+	printf("FAST_TRANS ì•Œê³ ë¦¬ì¦˜ì˜ í´ëŸ­ìˆ˜ëŠ” %.0fì…ë‹ˆë‹¤.\n", duration_fast);
 
 	fclose(fp);
 	fclose(ofp);
