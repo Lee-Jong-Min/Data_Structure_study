@@ -15,7 +15,7 @@ int fibo(n)
 void main()
 {
 	int i,n;	
-	printf("n�� �Է��Ͻÿ� : ");
+	printf("nÀ» ÀÔ·ÂÇÏ½Ã¿À : ");
 	scanf("%d",&n);
 	for(i=0;i<=n;i++)
 		printf("%d  ",fibo(i));
